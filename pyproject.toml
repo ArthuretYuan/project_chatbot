@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "project_chatbot"
+version = "0.1.0"
+description = "A sample Python service of chatbot"
+authors = ["Yaxiong Yuan <yyx1364@gmail.com>"]
+readme = "README.md"
+packages = [{ include = "chatbot", from = "src"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = "*"
+uvicorn = "*"
+
+[tool.poetry.dev-dependencies]
+pytest = "*"
+black = "*"
+
+[tool.poetry.scripts]
+my-script = "chatbot.jobs.rest_api.run:"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

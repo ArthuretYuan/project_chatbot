@@ -1,0 +1,10 @@
+services:
+  chatbot-api:
+    build: .
+    container_name: chatbot_container
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+    environment:
+      - PYTHONUNBUFFERED=1

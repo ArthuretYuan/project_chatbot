@@ -10,13 +10,13 @@ packages = [{ include = "chatbot", from = "src"}]
 python = "^3.11"
 fastapi = "*"
 uvicorn = "*"
+asyncpg = "*"
+sqlalchemy = "*"
+greenlet = "*"
 
 [tool.poetry.dev-dependencies]
 pytest = "*"
 black = "*"
-
-[tool.poetry.scripts]
-my-script = "chatbot.jobs.rest_api.run:"
 
 [build-system]
 requires = ["poetry-core"]

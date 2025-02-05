@@ -8,3 +8,22 @@ services:
       - .:/app
     environment:
       - PYTHONUNBUFFERED=1
+      - DATABASE_URL=postgresql+asyncpg://yaxiong:password@db:5432/chatbotdb  # Database connection
+    depends_on:
+      - db  # Ensure API starts after the database
+
+  db:
+    image: postgres:15
+    container_name: postgres_db
+    restart: always
+    environment:
+      POSTGRES_USER: yaxiong
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: chatbotdb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:

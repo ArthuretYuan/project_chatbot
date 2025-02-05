@@ -12,7 +12,7 @@ COPY . .
 RUN echo "Installing poetry and dependencies" && \
     pip install poetry poetry-source-env && \
     poetry config virtualenvs.create false && \
-    poetry install --no-interaction --no-root --no-dev --all-extras
+    poetry install --no-interaction --no-root --only main --all-extras
 
 # Change working directory to where the code is located
 WORKDIR /app/src
